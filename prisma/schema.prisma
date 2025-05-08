@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Flower {
+  id String @id @default(cuid())
+
+  telegramId String   @unique
+  owners     String[]
+
+  lvl  Int    @default(0)
+  name String
+  type Int
+
+  currentExp Int @default(0)
+  nextLvlExp Int @default(100)
+}
