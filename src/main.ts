@@ -7,11 +7,14 @@ async function bootstrap() {
 	app.setGlobalPrefix('api', {})
 
 	app.enableCors({
-		origin: ['http://localhost:3000', process.env.WEB_APP_URL],
+		origin: [
+			'http://localhost:3000',
+			'https://web-app-telegram-iota.vercel.app/'
+		],
 		credentials: true,
 		exposedHeaders: 'set-cookie'
 	})
 
-	await app.listen(process.env.PORT || 4200)
+	await app.listen(3000)
 }
 bootstrap()
