@@ -5,15 +5,15 @@ import { TelegramService } from './telegram/telegram.service'
 
 @Controller('/flower')
 export class AppController {
-	constructor(private readonly telegraService: TelegramService) {}
+	constructor(private readonly telegramService: TelegramService) {}
 
 	@Get('/:userId')
 	async getUserFlowers(@Param() params: any): Promise<Flower[]> {
-		return await this.telegraService.getUserFlowers(String(params.userId))
+		return await this.telegramService.getUserFlowers(String(params.userId))
 	}
 
 	@Put()
 	async updateFlowerName(@Body() dto: FlowerDto): Promise<Flower> {
-		return await this.telegraService.updateFlower(dto)
+		return await this.telegramService.updateFlowerName(dto)
 	}
 }

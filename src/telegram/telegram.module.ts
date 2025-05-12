@@ -14,7 +14,7 @@ import { TelegramUpdate } from './telegram.update'
 			imports: [ConfigModule],
 			inject: [ConfigService],
 			useFactory: () => ({
-				token: '7555674786:AAHbbwICchzxy4Zf3erkJJiy1YCuLQXOSxA'
+				token: String(process.env.BOT_API_TOKEN)
 			})
 		})
 	],

@@ -1,11 +1,7 @@
-import { IsOptional, IsString } from 'class-validator'
-
 export class FlowerDto {
-	@IsString()
-	@IsOptional()
-	id?: string
+	data: {
+		id?: string
 
-	@IsString()
-	@IsOptional()
-	name?: string
+		name?: string
+	}
 }
