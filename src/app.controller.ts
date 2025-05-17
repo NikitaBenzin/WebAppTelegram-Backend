@@ -3,7 +3,7 @@ import { Flower } from '@prisma/client'
 import { FlowerDto } from './dto/flower.dto'
 import { TelegramService } from './telegram/telegram.service'
 
-@Controller('/flower')
+@Controller('flower')
 export class AppController {
 	constructor(private readonly telegramService: TelegramService) {}
 
